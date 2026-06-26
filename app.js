@@ -45,7 +45,7 @@ async function searchPlacesNear(origin){
   const data = await resp.json();
   if(!data || !Array.isArray(data.elements)) return null;
   const mapped = data.elements.map((el,i)=>{
-    const tags = el.tags || {};
+    const tags = el.tags || {};           
     const name = (tags.name || tags.operator || 'NGO');
     const lat = el.lat || (el.center && el.center.lat);
     const lon = el.lon || (el.center && el.center.lon);
