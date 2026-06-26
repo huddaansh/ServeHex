@@ -67,7 +67,7 @@ async function searchPlacesNear(origin){
     const isHealthcare = !!t.healthcare;
     const isNursingHome = (t.social_facility && /nursing_home|assisted_living|group_home|residential|day_care/i.test(t.social_facility));
     return allowed && !excludedAmenity && !isShop && !isHealthcare && !isNursingHome;
-  })
+  })       
   .map(({tags, ...rest})=>rest);
   return mapped;
 }
